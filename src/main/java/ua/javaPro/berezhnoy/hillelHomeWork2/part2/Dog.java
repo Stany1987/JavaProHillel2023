@@ -5,28 +5,47 @@ public class Dog extends Animals {
     int maxSwim = 10;
     String runStr;
     String swimStr;
+    boolean swim = false;
 
-    public Dog(String name, int distanceRun, int distanceSwing) {
-        super(name, distanceRun, distanceSwing);
+    public Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    public void run(int distanceRun) {
+        super.run(distanceRun);
         if (distanceRun > maxRun) {
-            runStr = name + " " + "не пробежа " + distanceRun + "м" + ",устал ";
+            runStr = name + " " + "не пробежал " + distanceRun + "м" + ",устал ";
         } else {
-            runStr = name + " " + "пробежал " + distanceRun + "м";
+            runStr = name + " " + "Пробежал " + distanceRun + "м";
         }
-        if (distanceSwing > maxSwim) {
-            swimStr = name + " " + "не проплыл " + distanceSwing + "м" + " слишком большое растояние ";
+    }
+
+    @Override
+    public void swim(int distance) {
+        super.swim(distance);
+        swim = true;
+        if (distance > maxSwim) {
+            swimStr = name + " " + "не проплыл " + distance + "м" + " слишком большое растояние ";
         } else {
-            swimStr = name + " " + "проплыл " + distanceSwing + "м";
+            swimStr = name + " " + "Проплыл " + distance + "м";
         }
     }
 
     @Override
     public String toString() {
-        return "Dog{" +
-                "Имя: " + name + ", " +
-                runStr + ", " +
-                swimStr +
-                '}';
+        if (swim) {
+            return "Dog{" +
+                    "Имя: " + name + ", " +
+                    runStr + ", " +
+                    swimStr +
+                    '}';
+        } else {
+            return "Dog{" +
+                    "Имя: " + name + ", " +
+                    runStr +
+                    '}';
+        }
     }
 }
 
