@@ -18,7 +18,7 @@ public class Cat extends Animals {
         if (distanceRun > maxRun) {
             runStr = name + " " + "не пробежа " + distanceRun + "м" + ",устал ";
         } else {
-            runStr = name + " " + "Пробежал " + distanceRun + "м";
+            runStr = name + " " + "пробежал " + distanceRun + "м";
         }
     }
 
@@ -35,7 +35,7 @@ public class Cat extends Animals {
             return "Cat{" +
                     "Имя: " + name +
                     ", " + runStr +
-                    ", Кот не проплыл " + swimStr + " , коты не умеют плавать " +
+                    ", кот не проплыл " + swimStr + " , коты не умеют плавать " +
                     '}';
         } else {
             return "Cat{" +
