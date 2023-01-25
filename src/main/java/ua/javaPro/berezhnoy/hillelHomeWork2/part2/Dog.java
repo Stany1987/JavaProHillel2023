@@ -17,7 +17,7 @@ public class Dog extends Animals {
         if (distanceRun > maxRun) {
             runStr = name + " " + "не пробежал " + distanceRun + "м" + ",устал ";
         } else {
-            runStr = name + " " + "пробежал " + distanceRun + "м";
+            runStr = name + " " + "Пробежал " + distanceRun + "м";
         }
     }
 
@@ -28,7 +28,7 @@ public class Dog extends Animals {
         if (distance > maxSwim) {
             swimStr = name + " " + "не проплыл " + distance + "м" + " слишком большое растояние ";
         } else {
-            swimStr = name + " " + "проплыл " + distance + "м";
+            swimStr = name + " " + "Проплыл " + distance + "м";
         }
     }
 
