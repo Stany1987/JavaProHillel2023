@@ -1,18 +1,21 @@
 package ua.javaPro.berezhnoy.hillelHomeWork2.part2;
 
-public class Animals {
-    String name;
+public abstract class Animals {
+    private final String name;
+
+    public String getName() {
+        return name;
+    }
 
 
-    public Animals(String name) {
+    public Animals(String  name) {
         this.name = name;
-    }
-
-    public void run(int distanceRun) {
 
     }
 
-    public void swim(int distanceSwing) {
+    public abstract void run(int distanceRun);
 
-    }
+    public abstract void swim(int distanceSwing) ;
+
+
 }

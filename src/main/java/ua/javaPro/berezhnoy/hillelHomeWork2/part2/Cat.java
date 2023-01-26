@@ -2,28 +2,29 @@ package ua.javaPro.berezhnoy.hillelHomeWork2.part2;
 
 public class Cat extends Animals {
     int maxRun = 200;
-    String runStr;
-    String swimStr;
-    boolean swim = false;
-
 
     public Cat(String name) {
         super(name);
-
     }
 
     @Override
     public void run(int distanceRun) {
-        super.run(distanceRun);
         if (distanceRun > maxRun) {
-            runStr = name + " " + "не пробежа " + distanceRun + "м" + ",устал ";
+            System.out.println(getName() + " " + "не пробежал " + distanceRun + "м" + ",устал ");
         } else {
+
+            System.out.println(getName() + " " + "Пробежал " + distanceRun + "м");
+
             runStr = name + " " + "пробежал " + distanceRun + "м";
+
         }
     }
 
     @Override
     public void swim(int distance) {
+
+        System.out.println(getName() + " " + "Не проплыл " + distance + "м, " + " коты не умеют плавать.");
+
         super.swim(distance);
         swimStr =(distance) + "м";
         swim = true;
@@ -43,5 +44,6 @@ public class Cat extends Animals {
                     ", " + runStr +
                     '}';
         }
+
     }
 }
