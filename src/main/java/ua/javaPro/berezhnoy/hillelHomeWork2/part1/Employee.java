@@ -1,14 +1,14 @@
 package ua.javaPro.berezhnoy.hillelHomeWork2.part1;
 
-public class Officer {
-    private String name;
-    private String lastName;
-    private String patronymic;
-    private String position;
-    private String phoneNumber;
-    private double age;
+public class Employee {
+    private final String name;
+    private final String lastName;
+    private final String patronymic;
+    private final String position;
+    private final String phoneNumber;
+    private final double age;
 
-    public Officer(String name, String lastName, String patronymic, String position, String phoneNumber, int age) {
+    public Employee(String name, String lastName, String patronymic, String position, String phoneNumber, int age) {
         this.name = name;
         this.lastName = lastName;
         this.patronymic = patronymic;
@@ -19,7 +19,7 @@ public class Officer {
 
     @Override
     public String toString() {
-        return "Officer{" +
+        return "Employee{" +
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", patronymic='" + patronymic + '\'' +

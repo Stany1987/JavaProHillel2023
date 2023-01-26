@@ -1,9 +1,9 @@
 package ua.javaPro.berezhnoy.hillelHomeWork2.part3;
 
 public class Triangle implements Geometry {
-    public static final double triangle = 0.5;
-    private double baseTriangle;
-    private double heightTriangle;
+    public static final double factor = 0.5;
+    private final double  baseTriangle;
+    private final double heightTriangle;
 
     public Triangle(double baseTriangle, double heightTriangle) {
         this.baseTriangle = baseTriangle;
@@ -11,8 +11,8 @@ public class Triangle implements Geometry {
     }
 
     @Override
-    public double figure() {
-        return triangle * baseTriangle * heightTriangle;
+    public double area() {
+        return factor* baseTriangle * heightTriangle;
     }
 
 }

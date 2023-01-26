@@ -4,19 +4,19 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Geometry[] arrayFigure = new Geometry[3];
-        arrayFigure[0] = new Circle(18.2);
-        arrayFigure[1] = new Square(7.1);
-        arrayFigure[2] = new Triangle(7.3, 12.9);
+        Geometry[] figures = new Geometry[3];
+        figures[0] = new Circle(18.2);
+        figures[1] = new Square(7.1);
+        figures[2] = new Triangle(7.3, 12.9);
 
-        System.out.println("Суммарная площадь всех фигур " + allFiguresArea(arrayFigure));
+        System.out.println("Суммарная площадь всех фигур " + allFiguresArea(figures));
 
     }
 
     public static double allFiguresArea(Geometry[] arrayFigure) {
         double areaFigures = 0;
-        for (int i = 0; i < arrayFigure.length; i++) {
-            areaFigures += arrayFigure[i].figure();
+        for (Geometry geometry : arrayFigure) {
+            areaFigures += geometry.area();
         }
         return areaFigures;
     }
