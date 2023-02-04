@@ -2,22 +2,22 @@ package ua.javaPro.berezhnoy.hillelHomeWork4;
 
 public class ArrayValueCalculator {
 
-    public static int doCalc(String[][] doubleArray)  {
+    public static int doCalc(String[][] array)  {
         int sum = 0;
-        if (doubleArray.length != 4) {
+        if (array.length != 4) {
             throw new ArraySizeException("Wrong size");
         }
-        for (int i = 0; i < doubleArray.length; i++) {
-            if (doubleArray[i].length != 4) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length != 4) {
                 throw new ArraySizeException("Wrong size");
             }
-            for (int j = 0; j < doubleArray[i].length; j++) {
+            for (int j = 0; j < array[i].length; j++) {
                 try {
-                    sum += Integer.parseInt(doubleArray[i][j]);
+                    sum += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException ex) {
                     throw new ArrayDataException("Invalid array format in cell: "
                             + "String: " + i + " " + "Column: " + j + " "
-                            + "Symbol: " + doubleArray[i][j] + " " + ex);
+                            + "Symbol: " + array[i][j] + " " + ex);
                 }
             }
         }
