@@ -2,7 +2,7 @@ package ua.javaPro.berezhnoy.hillelHomeWork4;
 
 public class ArrayValueCalculator {
 
-    public static int doCalc(String[][] doubleArray) throws ArraySizeException, ArrayDataException {
+    public static int doCalc(String[][] doubleArray)  {
         int sum = 0;
         if (doubleArray.length != 4) {
             throw new ArraySizeException("Wrong size");
