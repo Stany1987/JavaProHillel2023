@@ -40,7 +40,7 @@ public class ArrayList implements HillelList {
     @Override
     public int indexOf(String item) {
         for (int i = 0; i < arrayItem.length; i++) {
-            if (item == arrayItem[i]) {
+            if (item== arrayItem[i]) {
                 return i;
             }
         }
