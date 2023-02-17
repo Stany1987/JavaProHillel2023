@@ -27,15 +27,15 @@ public class HillelCollections {
         List<String> copyList = new ArrayList<>();
         List<String> result = new ArrayList<>();
 
-        for (int i = 0; i < list.size(); i++) {
+        for ( String value:list) {
             int count = 0;
             for (String s : list) {
-                if (Objects.equals(list.get(i), s)) {
+                if (Objects.equals(value, s)) {
                     count++;
                 }
             }
             {
-                copyList.add(list.get(i) + ":" + count);
+                copyList.add(value + ":" + count);
             }
         }
         for (String s : copyList) {
