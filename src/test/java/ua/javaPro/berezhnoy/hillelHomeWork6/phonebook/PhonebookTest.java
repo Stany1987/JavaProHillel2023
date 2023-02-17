@@ -5,12 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PhonebookTest {
-
     @Test
     void mustKeepNamePhoneNumber() {
         var phonebook = new Phonebook();
         phonebook.add("Alex", "93254356");
-        assertEquals(phonebook.findAll("Alex"), "Alex [93254356]");
+        assertEquals(phonebook.findAll("Alex").toString(), "[Recording[name=Alex, phoneNumber=93254356]]");
     }
 
     @Test
@@ -19,7 +18,7 @@ class PhonebookTest {
         phonebook.add("Mania", "90873232");
         phonebook.add("Mania", "90811111");
         phonebook.add("Mania", "90822222");
-        assertEquals(phonebook.find("Mania", 1), "Mania 90811111");
+        assertEquals(phonebook.find("Mania").toString(), "Recording[name=Mania, phoneNumber=90873232]");
     }
 
     @Test
@@ -28,17 +27,18 @@ class PhonebookTest {
         phonebook.add("Vika", "90873232");
         phonebook.add("Vika", "90814535");
         phonebook.add("Vika", "90833424");
-        assertEquals(phonebook.find("Mania", 7), null);
+        assertEquals(phonebook.find("Mania"), null);
     }
 
     @Test
     void
     shouldReturnAllElements() {
         var phonebook = new Phonebook();
-        phonebook.add("Salo", "2354346");
-        phonebook.add("Salo", "5647635");
-        phonebook.add("Salo", "8779852");
-        assertEquals(phonebook.findAll("Salo"), "Salo [2354346, 5647635, 8779852]");
+        phonebook.add("Papazodlo", "2354346");
+        phonebook.add("Papazodlo", "5647635");
+        phonebook.add("Papazodlo", "8779852");
+        assertEquals(phonebook.findAll("Papazodlo").toString(), "[Recording[name=Papazodlo, phoneNumber=2354346]," +
+                " Recording[name=Papazodlo, phoneNumber=5647635], Recording[name=Papazodlo, phoneNumber=8779852]]");
     }
 
     @Test

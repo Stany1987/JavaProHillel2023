@@ -3,14 +3,12 @@ package ua.javaPro.berezhnoy.hillelHomeWork6;
 import java.util.*;
 
 public class HillelCollections {
-    List<String> list = new ArrayList<>();
 
-    public static int countOccurance(List<String> arrList, String str) {
-        int result = Collections.frequency(arrList, str);
-        return result;
+    public int countOccurance(List<String> arrList, String str) {
+        return Collections.frequency(arrList, str);
     }
 
-    public static List<Integer> toList(Integer[] array) {
+    public List<Integer> toList(Integer[] array) {
         List<Integer> list = Arrays.asList(array);
         return list;
     }
@@ -31,45 +29,43 @@ public class HillelCollections {
 
         for (int i = 0; i < list.size(); i++) {
             int count = 0;
-            for (int j = 0; j < list.size(); j++) {
-                if (list.get(i) == list.get(j)) {
+            for (String s : list) {
+                if (Objects.equals(list.get(i), s)) {
                     count++;
                 }
             }
-            if (!copyList.contains(list.get(i))) ;
             {
                 copyList.add(list.get(i) + ":" + count);
             }
         }
-        for (int i = 0; i < copyList.size(); i++) {
-            if (!result.contains(copyList.get(i))) {
-                result.add(copyList.get(i));
+        for (String s : copyList) {
+            if (!result.contains(s)) {
+                result.add(s);
             }
         }
 
         return result;
     }
 
-    public static List<String> findOccurance(List<String> listName) {
-        List<String> listCopy = new ArrayList<>();
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < listName.size(); i++) {
-            int count = 0;
-            for (int j = 0; j < listName.size(); j++) {
-                if (listName.get(i).equals(listName.get(j))) {
-                    count++;
-                }
-            }
-            if (!listCopy.contains(listName.get(i))) {
-                listCopy.add("{name: \"" + listName.get(i) + "\" , ocurrencia: " + count + "}");
-            }
-        }
-        for (String i : listCopy) {
-            if (!result.contains(i)) {
-                result.add(i);
+    public List<WordOccurrence> findOccurance(List<String> listName) {
+        List result = new ArrayList<WordOccurrence>();
+        List<String> addWords = new ArrayList<>();
+        for (String str : listName) {
+            if (!addWords.contains(str)) {
+                result.add(new WordOccurrence(str, countOccurance(listName, str)));
+                addWords.add(str);
             }
         }
 
         return result;
     }
 }
+
+
+
+
+
+
+
+
+
