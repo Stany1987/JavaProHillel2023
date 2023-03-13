@@ -21,7 +21,7 @@ public class FileLogger implements Logger {
         write(messDebug);
 
     }
-
+    //tt
     public void info(String messInfo) throws FileMaxSizeException, IOException {
         if (configuration.getLogLevel().getLevel() < LoginLevel.INFO.getLevel()) return;
         write(messInfo);
