@@ -2,6 +2,8 @@ package ua.javaPro.berezhnoy.hillelHomeWork5;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.ua.javaPro.berezhnoy.hillelHomeWork5.ArrayList;
+import org.ua.javaPro.berezhnoy.hillelHomeWork5.HillelList;
 
 import java.util.Arrays;
 

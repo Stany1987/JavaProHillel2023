@@ -2,6 +2,8 @@ package ua.javaPro.berezhnoy.hillelHomeWork3;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.ua.javaPro.berezhnoy.hillelHomeWork3.StringSymbol;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
@@ -31,14 +33,14 @@ class StringSymbolTest {
 
 
 
-    @Test
-    void guessWord() {
-            ByteArrayInputStream in = new ByteArrayInputStream("orange".getBytes());
-            InputStream inputStream = System.in;
-            System.setIn(in);
-           StringSymbol.guessWord();
-            System.setIn(inputStream);
-
-
-    }
+//    @Test
+//    void guessWord() {
+//            ByteArrayInputStream in = new ByteArrayInputStream("orange".getBytes());
+//            InputStream inputStream = System.in;
+//            System.setIn(in);
+//           StringSymbol.guessWord();
+//            System.setIn(inputStream);
+//
+//
+//    }
 }

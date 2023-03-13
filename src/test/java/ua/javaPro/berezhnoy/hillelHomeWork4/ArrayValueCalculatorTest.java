@@ -3,6 +3,9 @@ package ua.javaPro.berezhnoy.hillelHomeWork4;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+import org.ua.javaPro.berezhnoy.hillelHomeWork4.ArrayDataException;
+import org.ua.javaPro.berezhnoy.hillelHomeWork4.ArraySizeException;
+import org.ua.javaPro.berezhnoy.hillelHomeWork4.ArrayValueCalculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
