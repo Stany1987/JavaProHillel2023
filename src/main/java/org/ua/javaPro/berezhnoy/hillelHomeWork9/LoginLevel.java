@@ -1,7 +1,7 @@
 package org.ua.javaPro.berezhnoy.hillelHomeWork9;
 
 public enum LoginLevel {
-    INFO(0), DEBUG(1);
+    INFO(0), DEBUG(1),EROR(3);
 
     private int level;
 
