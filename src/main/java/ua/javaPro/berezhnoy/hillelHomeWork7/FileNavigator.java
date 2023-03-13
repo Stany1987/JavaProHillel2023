@@ -1,3 +1,4 @@
+package ua.javaPro.berezhnoy.hillelHomeWork7;
 package org.ua.javaPro.berezhnoy.hillelHomeWork7;
 
 import java.util.*;

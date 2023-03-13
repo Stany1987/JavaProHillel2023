@@ -1,4 +1,4 @@
-package org.ua.javaPro.berezhnoy.hillelHomeWork7;
+package ua.javaPro.berezhnoy.hillelHomeWork7;
 
 public record FileData(String name, int size, String path) implements Comparable<FileData> {
 
