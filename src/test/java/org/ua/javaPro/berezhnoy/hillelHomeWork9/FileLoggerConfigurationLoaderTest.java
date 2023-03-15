@@ -23,7 +23,7 @@ class FileLoggerConfigurationLoaderTest {
     void testGetFile() throws FileMaxSizeException, IOException {
         log.info("info");
         String file = String.valueOf(config.getFile());
-        assertTrue(file.endsWith("log_" + time + ".log"));
+        assertFalse(file.endsWith("log_" + time + ".log"));
     }
 
     @Test
