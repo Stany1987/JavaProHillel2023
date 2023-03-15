@@ -23,7 +23,7 @@ class FileLoggerConfigurationLoaderTest {
     void testGetFile() throws FileMaxSizeException, IOException {
         log.info("info");
         String file = String.valueOf(config.getFile());
-        assertFalse(file.endsWith("log_" + time + ".log"));
+        assertTrue(file.endsWith("log_" + time + ".log"));
     }
 
     @Test
@@ -31,7 +31,7 @@ class FileLoggerConfigurationLoaderTest {
         String path = "src/main/resources/logs_config.properties";
         File file = new File(path);
         String absolutePath = file.getAbsolutePath();
-        assertFalse(absolutePath.endsWith("logs_config.properties"));
+        assertTrue(absolutePath.endsWith("logs_config.properties"));
     }
 
     @Test
