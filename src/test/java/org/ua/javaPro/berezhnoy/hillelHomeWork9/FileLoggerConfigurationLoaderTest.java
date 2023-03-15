@@ -31,7 +31,7 @@ class FileLoggerConfigurationLoaderTest {
         String path = "src/main/resources/logs_config.properties";
         File file = new File(path);
         String absolutePath = file.getAbsolutePath();
-        assertTrue(absolutePath.endsWith("logs_config.properties"));
+        assertFalse(absolutePath.endsWith("logs_config.properties"));
     }
 
     @Test
