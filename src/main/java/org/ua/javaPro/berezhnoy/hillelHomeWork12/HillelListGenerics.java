@@ -13,7 +13,7 @@ public interface HillelListGenerics <T> {
 
     int size();
 
-    T get(T index);
+    T get(int index);
 
     Object[] getAll();
 

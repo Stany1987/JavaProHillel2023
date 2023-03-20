@@ -8,7 +8,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayListGenericsTest  {
-    ArrayListGenerics  list = new ArrayListGenerics< String>();
+    ArrayListGenerics <String> list = new ArrayListGenerics();
 
     @Test
     void shouldAddElementToArrayTest() {
