@@ -1,5 +1,7 @@
 package org.ua.javaPro.berezhnoy.hillelHomeWork11;
 
+import java.util.Arrays;
+
 public class ArrayInitializer {
 
     public static void init(double[] array) {
@@ -8,16 +10,15 @@ public class ArrayInitializer {
             @Override
             public void run() {
                 for (int i = 0; i < halfLength; i++) {
-                    array[i] = array[halfLength + i] = formula(i, array[i]);
+                    array[i] = formula(i, array[i]);
                 }
             }
         });
-
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < halfLength; i++) {
-                    array[i] = array[halfLength + i] = formula(i, array[i]);
+                for (int i = halfLength; i < array.length; i++) {
+                    array[i]  = formula(i, array[i]);
                 }
             }
         });
@@ -29,6 +30,7 @@ public class ArrayInitializer {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     public static double formula(int i, double value) {
