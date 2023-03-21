@@ -4,7 +4,7 @@ import java.util.concurrent.RecursiveAction;
 
 public class ArrayInitializerForkJoin extends RecursiveAction {
 
-    private static final int hold = 20;
+    private static final int HOLD = 20;
     private final double[] array;
     private final int start;
     private final int end;
@@ -16,7 +16,7 @@ public class ArrayInitializerForkJoin extends RecursiveAction {
     }
 
     protected void compute(){
-        if ( end - start <= hold){
+        if ( end - start <= HOLD){
             for (int i = start; i < end ; i++) {
                 array[i] = formula(i,array[i]);
             }
