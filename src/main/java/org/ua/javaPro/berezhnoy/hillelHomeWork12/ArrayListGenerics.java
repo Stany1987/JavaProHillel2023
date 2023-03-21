@@ -53,8 +53,8 @@ public class ArrayListGenerics<T> implements HillelListGenerics <T>{
     }
 
     @Override
-    public T get(T index) {
-        return  arrayItem[(int) index];
+    public T get(int index) {
+        return  arrayItem[index];
     }
 
 
