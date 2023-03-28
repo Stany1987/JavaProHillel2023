@@ -62,16 +62,16 @@ public class SolutionProduct {
                 .toList();
     }
 
-    public static double totalCostOfProducts(List<Product> products, double price) {
+    public static double totalCostOfProducts(List<Product> products,String category, double price) {
         return products.stream()
                 .filter(product -> product.date().getYear() == LocalDate.now().getYear())
-                .filter(product -> product.category().equals("Book"))
+                .filter(product -> product.category().equals(category))
                 .filter(product -> product.price() <= price)
                 .mapToDouble(Product::price)
                 .sum();
     }
 
-    public static Map<String, List<Product>> objectGrouping(List<Product> products) {
+    public static Map<String, List<Product>> groupByCategory(List<Product> products) {
         return products.stream()
                 .collect(Collectors.groupingBy((new Function<Product, String>() {
                     @Override

@@ -71,12 +71,12 @@ class SolutionProductTest {
 
     @Test
     void testTotalCostOfProducts() {
-        assertEquals(SolutionProduct.totalCostOfProducts(listProduct, 75), 72);
+        assertEquals(SolutionProduct.totalCostOfProducts(listProduct,"Book", 75), 72);
     }
 
     @Test
     void testobjectGrouping() {
-        Map<String, List<Product>> groupedProduct = SolutionProduct.objectGrouping(listProduct);
+        Map<String, List<Product>> groupedProduct = SolutionProduct.groupByCategory(listProduct);
         assertEquals(6, groupedProduct.get("Book").size());
         assertEquals(2, groupedProduct.get("Toy").size());
 
