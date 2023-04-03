@@ -14,12 +14,12 @@ public class Main {
                 ("src/main/resources/heroes_information.csv"))) {
             bufferedReader.readLine();
             while ((line = bufferedReader.readLine()) != null) {
-                String[] heroData = line.substring(line.indexOf(";") + 1).split(";");
+                String[] heroData = line.split(";");
 
-
-                Hero hero = new Hero(heroData[0], heroData[1], heroData[2], heroData[3], heroData[4],
-                        Double.parseDouble(heroData[5].replace(',', '.')),
-                        heroData[6], heroData[7], heroData[8], Integer.parseInt(heroData[9]));
+//Спасибо за подсказку ) я тут долгова-то искал решение. А оно так все просто оказалось
+                Hero hero = new Hero(heroData[1], heroData[2], heroData[3], heroData[4], heroData[5],
+                        Double.parseDouble(heroData[6].replace(',', '.')),
+                        heroData[7], heroData[8], heroData[9], Integer.parseInt(heroData[10]));
 
                 heroes.add(hero);
             }
