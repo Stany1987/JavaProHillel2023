@@ -2,8 +2,9 @@ package org.ua.javaPro.berezhnoy.hillelHomeWork9;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -39,4 +40,15 @@ class FileLoggerConfigurationLoaderTest {
         LoginLevel level = config.getLogLevel();
         assertTrue(level == LoginLevel.DEBUG || level == LoginLevel.INFO);
     }
+
+    @Test
+    void checkFileLog() throws IOException, FileMaxSizeException {
+        log.info("info");
+        String file = String.valueOf(config.getFile());
+        String searchStringTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yy_MM_dd_HH_mm_ss"));
+        String fileContent = Files.readString(Paths.get(file));
+        assertEquals(fileContent.trim(), searchStringTime + LoginLevel.DEBUG + "info");
+    }
+
+
 }
