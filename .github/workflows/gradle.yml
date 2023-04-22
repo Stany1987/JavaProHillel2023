@@ -23,7 +23,9 @@ jobs:
 
     env:
       GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
-    
+ hillelHomeWork20SqlJdbc
+
+ master
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 17
