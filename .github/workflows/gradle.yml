@@ -23,7 +23,7 @@ jobs:
 
     env:
       GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
-      node-version: '16'
+    
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 17
