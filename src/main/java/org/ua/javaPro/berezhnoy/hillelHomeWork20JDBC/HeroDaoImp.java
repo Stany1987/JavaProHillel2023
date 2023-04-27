@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+@RequiredArgsConstructor
 public class HeroDaoImp implements HeroDao {
     private final DataSource dataSource;
 
