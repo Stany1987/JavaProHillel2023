@@ -1,10 +1,9 @@
 package org.ua.javaPro.berezhnoy.hillelHomeWork21Patterns;
 
-import org.ua.javaPro.berezhnoy.hillelHomeWork20JDBC.Hero;
 import org.ua.javaPro.berezhnoy.hillelHomeWork20JDBC.HeroDao;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HeroService {
 
@@ -17,17 +16,12 @@ public class HeroService {
     }
 
     public List<HeroDto> getHeroes() {
-        List<Hero> heroes = heroDao.findAll();
-        List<HeroDto> heroDtos = new ArrayList<>();
-        for (Hero hero : heroes) {
-            List<String> movies = heroMovieService.getPlayedIn(hero.getName());
-            HeroDto heroDto = HeroDto.builder()
-                    .name(hero.getName())
-                    .movies(movies)
-                    .build();
-            heroDtos.add(heroDto);
-        }
-        return heroDtos;
+        return heroDao.findAll().stream()
+                .map(hero -> HeroDto.builder()
+                        .name(hero.getName())
+                        .movies(heroMovieService.getPlayedIn(hero.getName()))
+                        .build())
+                .collect(Collectors.toList());
     }
 
 }
