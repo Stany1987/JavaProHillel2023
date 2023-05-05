@@ -18,14 +18,14 @@ public class HeroServer {
     public static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
-
+HeroFactory heroFactory=new HeroFactory();
         var serverSocket = new ServerSocket(PORT);
         try (serverSocket) {
             log.info("connection successful on port " + PORT);
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 log.info("connect successful");
-                var clientThread = new Thread(new ClientConnect(clientSocket));
+                var clientThread = new Thread(new ClientConnect(clientSocket,heroFactory));
                 clientThread.start();
             }
         } catch (IOException ex) {
@@ -36,9 +36,11 @@ public class HeroServer {
 
     public static class ClientConnect implements Runnable {
         private final Socket clientSocket;
+        private final HeroFactory heroFactory;
 
-        public ClientConnect(Socket socket) {
+        public ClientConnect(Socket socket,HeroFactory heroFactory) {
             this.clientSocket = socket;
+            this.heroFactory=heroFactory;
         }
 
         @SneakyThrows
@@ -55,7 +57,6 @@ public class HeroServer {
 
                         String heroName = WordUtils.capitalizeFully(command[1]);
 
-                        var heroFactory = new HeroFactory();
                         HeroService heroService = heroFactory.createService(dataSource());
 
                         List<HeroDto> heroes = heroService.findByName((heroName));
