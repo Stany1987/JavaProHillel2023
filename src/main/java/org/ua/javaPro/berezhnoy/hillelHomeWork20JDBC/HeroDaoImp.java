@@ -2,6 +2,7 @@ package org.ua.javaPro.berezhnoy.hillelHomeWork20JDBC;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
@@ -58,6 +59,18 @@ public class HeroDaoImp implements HeroDao {
         }
     }
 
+    @SneakyThrows
+    @Override
+    public List<Hero> findById(long id) {
+        var sql = "select * from heroes where id = '" + id + "'";
+        try (var connection = dataSource.getConnection();
+             var statement = connection.createStatement()) {
+            var result = statement.executeQuery(sql);
+            return mapHeroes(result);
+        }
+
+    }
+
     @Override
     public void create(Hero hero) {
         var sql = "insert into heroes (id, name, gender, eye_color, race, hair_color,height,publisher,skin_color, aligment, weight) "
@@ -84,7 +97,7 @@ public class HeroDaoImp implements HeroDao {
         statement.setString(8, hero.getPublisher());
         statement.setString(9, hero.getSkinColor());
         statement.setString(10, hero.getAlignment());
-        statement.setDouble(11, hero.getWeight());
+        statement.setInt(11, hero.getWeight());
     }
 
     @Override

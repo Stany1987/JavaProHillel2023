@@ -18,7 +18,7 @@ public class Main {
         service.createHero(hero);
         System.out.println(service.findByName("princess java"));
 
-        service.updateHeroAtName(hero);
+        service.updateHero(hero);
         service.deleteHero(734L);
     }
 
