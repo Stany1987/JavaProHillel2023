@@ -37,7 +37,7 @@ public class RestControllerExample {
         HeroDto existingHero = getHero(id);
         Hero updatedHero = updateDto.toEntity();
         updatedHero.setId(existingHero.id());
-        heroService.updateHeroAtId(updatedHero);
+        heroService.updateHero(updatedHero);
         return getHero(id);
     }
 

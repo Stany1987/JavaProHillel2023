@@ -116,20 +116,6 @@ public class HeroDaoImp implements HeroDao {
     }
 
     @Override
-    public void updateAtId(Hero hero) {
-        var sql = "update heroes set id=?, name=?, gender=?, eye_color=?, race=?, hair_color=?, height=?, publisher=?, " +
-                "skin_color=?, aligment=?, weight=? where id=?";
-        try (var connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
-            preparedStatementForHero(statement, hero);
-            statement.setLong(12, hero.getId());
-            statement.executeUpdate();
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-
-    @Override
     public boolean delete(Long id) {
         var sql = "delete from heroes where id=?";
         try (var connection = dataSource.getConnection();

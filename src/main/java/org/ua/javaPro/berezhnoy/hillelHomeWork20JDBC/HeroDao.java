@@ -14,8 +14,6 @@ public interface HeroDao {
 
     void update(Hero hero);
 
-    void updateAtId(Hero hero);
-
     boolean delete(Long id);
 
 }

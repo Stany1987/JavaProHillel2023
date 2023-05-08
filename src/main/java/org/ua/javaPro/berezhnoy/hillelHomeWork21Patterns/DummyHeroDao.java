@@ -38,11 +38,6 @@ public class DummyHeroDao implements HeroDao {
     }
 
     @Override
-    public void updateAtId(Hero hero) {
-
-    }
-
-    @Override
     public boolean delete(Long id) {
         return heroes.remove(heroes.get(Math.toIntExact(id)));
     }

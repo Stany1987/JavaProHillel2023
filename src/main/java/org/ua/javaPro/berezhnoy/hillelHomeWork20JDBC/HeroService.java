@@ -34,12 +34,8 @@ public class HeroService {
         return HeroDto.from(hero);
     }
 
-    public void updateHeroAtName(Hero hero) {
+    public void updateHero(Hero hero) {
         dao.update(hero);
-    }
-
-    public void updateHeroAtId(Hero hero) {
-        dao.updateAtId(hero);
     }
 
     public boolean deleteHero(Long id) {
