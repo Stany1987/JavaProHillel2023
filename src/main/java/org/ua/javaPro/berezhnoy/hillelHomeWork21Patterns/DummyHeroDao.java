@@ -23,6 +23,11 @@ public class DummyHeroDao implements HeroDao {
     }
 
     @Override
+    public List<Hero> findById(long id) {
+        return null;
+    }
+
+    @Override
     public void create(Hero hero) {
         heroes.add(hero);
     }
@@ -30,6 +35,11 @@ public class DummyHeroDao implements HeroDao {
     @Override
     public void update(Hero hero) {
         heroes.set((int) hero.getId(), hero);
+    }
+
+    @Override
+    public void updateAtId(Hero hero) {
+
     }
 
     @Override

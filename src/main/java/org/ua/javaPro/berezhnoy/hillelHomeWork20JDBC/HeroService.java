@@ -23,16 +23,26 @@ public class HeroService {
                 .toList();
     }
 
-    public void createHero(Hero hero) {
+    public List<HeroDto> findById(long id) {
+        return dao.findById(id).stream()
+                .map(HeroDto::from)
+                .toList();
+    }
+
+    public HeroDto createHero(Hero hero) {
         dao.create(hero);
+        return HeroDto.from(hero);
     }
 
     public void updateHeroAtName(Hero hero) {
         dao.update(hero);
     }
 
+    public void updateHeroAtId(Hero hero) {
+        dao.updateAtId(hero);
+    }
+
     public boolean deleteHero(Long id) {
         return dao.delete(id);
-
     }
 }
