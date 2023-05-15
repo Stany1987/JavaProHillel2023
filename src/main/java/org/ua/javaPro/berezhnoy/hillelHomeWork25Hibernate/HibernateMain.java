@@ -14,7 +14,7 @@ public class HibernateMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(HibernateSession.class);
         SessionFactory sessionFactory = context.getBean(SessionFactory.class);
-        ;
+
         try (Session session = sessionFactory.openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<Hero> query = builder.createQuery(Hero.class);
