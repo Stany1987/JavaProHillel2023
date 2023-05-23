@@ -16,6 +16,8 @@ repositories {
 dependencies {
 
     implementation 'org.springframework:spring-orm:6.0.8'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     implementation 'org.hibernate:hibernate-core:6.2.2.Final'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
