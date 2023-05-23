@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hero</title>
+</head>
+<body>
+<p th:text="${name}+'!' "/>
+
+<div th:switch="${heroes}">
+    <h2 th:case="null">No heroes</h2>
+    <div th:case="*">
+        <h2>Heroes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>eyeColor</th>
+                <th>race</th>
+                <th>hairColor</th>
+                <th>height</th>
+                <th>publisher</th>
+                <th>skinColor</th>
+                <th>alignment</th>
+                <th>weight</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="hero : ${heroes}">
+                <td th:text="${hero.name}"></td>
+                <td th:text="${hero.gender}"></td>
+                <td th:text="${hero.eyeColor}"></td>
+                <td th:text="${hero.race}"></td>
+                <td th:text="${hero.hairColor}"></td>
+                <td th:text="${hero.height}"></td>
+                <td th:text="${hero.publisher}"></td>
+                <td th:text="${hero.skinColor}"></td>
+                <td th:text="${hero.alignment}"></td>
+                <td th:text="${hero.weight}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
