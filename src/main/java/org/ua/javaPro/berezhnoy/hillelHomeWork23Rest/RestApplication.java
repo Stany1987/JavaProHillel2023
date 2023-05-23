@@ -10,7 +10,7 @@ import org.ua.javaPro.berezhnoy.hillelHomeWork20JDBC.HeroService;
 
 import javax.sql.DataSource;
 
-@SpringBootApplication
+
 
 public class RestApplication {
     public static void main(String[] args) {
