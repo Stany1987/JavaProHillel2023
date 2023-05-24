@@ -51,5 +51,6 @@ jar {
 }
 
 springBoot{
-    mainClass= 'org.ua.javaPro.berezhnoy.hillelHomeWork27DataJPA.DataApplication'
+    mainClass= 'org.ua.javaPro.berezhnoy.bank.hillelHomeWork27DataJPA.DataApplication'
+
 }
