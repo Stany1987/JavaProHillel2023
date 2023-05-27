@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableConfigurationProperties
-@PropertySource("classpath:application.properties")
 public class DataConfiguration {
     @Value("${spring.second-datasource.url}")
     private String secondUrl;
