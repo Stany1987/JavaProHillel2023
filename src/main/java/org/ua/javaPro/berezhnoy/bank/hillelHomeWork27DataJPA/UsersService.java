@@ -29,9 +29,9 @@ public class UsersService implements CommandLineRunner {
         System.out.println(userDataRepository.findAll());
         System.out.println(userDataRepository.findByEmail("John@gmail.com"));
         System.out.println(userDataRepository.findByName("John"));
-        System.out.println(userDataRepository.findById(10L));
+        System.out.println(userDataRepository.findById(6L));
 
-        kim = userDataRepository.findById(11L).orElseThrow();
+        kim = userDataRepository.findById(6L).orElseThrow();
         kim.setRole(UserRole.CUSTOMER.name());
         userDataRepository.save(kim);
 
