@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-@Service
+//@Service
 @RequiredArgsConstructor
 public class UsersService implements CommandLineRunner {
     private final UsersDataRepository userDataRepository;

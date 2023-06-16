@@ -1,8 +1,7 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomwWork28DBVersioning;
+package org.ua.javaPro.berezhnoy.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class BankApplication {
