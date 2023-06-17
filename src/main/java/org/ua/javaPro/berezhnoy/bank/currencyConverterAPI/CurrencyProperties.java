@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "currency")
 
-public class PropCurrency {
+public class CurrencyProperties {
     private String url;
     private String key;
 

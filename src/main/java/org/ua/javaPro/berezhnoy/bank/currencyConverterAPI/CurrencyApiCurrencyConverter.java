@@ -3,21 +3,22 @@ package org.ua.javaPro.berezhnoy.bank.currencyConverterAPI;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.Currency;
 import java.util.Map;
 
 @Service
 public class CurrencyApiCurrencyConverter implements CurrencyConverter {
 
     private final WebClient webClient;
-    private final PropCurrency config;
+    private final CurrencyProperties config;
 
-    public CurrencyApiCurrencyConverter(PropCurrency config) {
+    public CurrencyApiCurrencyConverter(CurrencyProperties config) {
         this.webClient = WebClient.builder().build();
         this.config = config;
     }
 
     @Override
-    public double convert(String from, String to, double amount) {
+    public double convert(Currency from, Currency to, double amount) {
 
         try {
             var result = webClient.get()
@@ -28,14 +29,13 @@ public class CurrencyApiCurrencyConverter implements CurrencyConverter {
                     .retrieve()
                     .bodyToMono(Map.class)
                     .block();
-
             Map<String, Object> data = (Map<String, Object>) result.get("data");
-            Map<String, Object> uahData = (Map<String, Object>) data.get(to);
-            Double value = (Double) uahData.get("value");
+            Map<String, Object> currencyData = (Map<String, Object>) data.get(to.toString());
+            Double value = (Double) currencyData.get("value");
             return amount * value;
         } catch (Exception e) {
             e.printStackTrace();
-            return 0;
+            throw new RuntimeException("Currency conversion error");
         }
     }
 
