@@ -6,15 +6,22 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class CurrencyConfig {
-    @Bean
-    @ConditionalOnProperty(name = "currency.converter.provider", havingValue = "dummy", matchIfMissing = false)
-    public CurrencyConverter dummyCurrencyConverter() {
-        return new DummyCurrencyConverter();
+
+    @Configuration
+    @ConditionalOnProperty(name = "currency.converter.provider", havingValue = "currecyapi")
+    public static class currencyApiCurrencyConverter {
+        @Bean
+        public CurrencyConverter currencyConverter(CurrencyProperties currencyProperties) {
+            return new CurrencyApiCurrencyConverter(currencyProperties);
+        }
     }
 
-    @Bean
-    @ConditionalOnProperty(name = "currency.converter.provider", havingValue = "currencyapi")
-    public CurrencyConverter currencyApiCurrencyConverter(CurrencyProperties config) {
-        return new CurrencyApiCurrencyConverter(config);
+    @Configuration
+    @ConditionalOnProperty(name = "currency.converter.provider", havingValue = "dummy")
+    public static class dummyCurrencyConverter {
+        @Bean
+        public CurrencyConverter currencyConverter() {
+            return new DummyCurrencyConverter();
+        }
     }
 }
