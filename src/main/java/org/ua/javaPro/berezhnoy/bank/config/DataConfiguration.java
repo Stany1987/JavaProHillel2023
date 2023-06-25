@@ -1,4 +1,4 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomeWork27DataJPA;
+package org.ua.javaPro.berezhnoy.bank.config;
 
 
 

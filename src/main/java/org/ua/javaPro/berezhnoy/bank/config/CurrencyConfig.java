@@ -1,8 +1,12 @@
-package org.ua.javaPro.berezhnoy.bank.currencyConverterAPI;
+package org.ua.javaPro.berezhnoy.bank.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.ua.javaPro.berezhnoy.bank.currency.CurrencyApiCurrencyConverter;
+import org.ua.javaPro.berezhnoy.bank.currency.CurrencyConverter;
+import org.ua.javaPro.berezhnoy.bank.currency.CurrencyProperties;
+import org.ua.javaPro.berezhnoy.bank.currency.DummyCurrencyConverter;
 
 @Configuration
 public class CurrencyConfig {

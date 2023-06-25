@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import org.ua.javaPro.berezhnoy.bank.currencyConverterAPI.CurrencyConverter;
+import org.ua.javaPro.berezhnoy.bank.currency.CurrencyConverter;
 
 import java.util.Currency;
 import java.util.concurrent.CompletableFuture;

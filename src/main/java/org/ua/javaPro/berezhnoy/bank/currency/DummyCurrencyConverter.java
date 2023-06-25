@@ -1,4 +1,6 @@
-package org.ua.javaPro.berezhnoy.bank.currencyConverterAPI;
+package org.ua.javaPro.berezhnoy.bank.currency;
+
+import org.ua.javaPro.berezhnoy.bank.currency.CurrencyConverter;
 
 import java.util.Currency;
 

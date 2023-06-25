@@ -1,7 +1,8 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomeWork27DataJPA;
+package org.ua.javaPro.berezhnoy.bank.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.ua.javaPro.berezhnoy.bank.user.UsersData;
 
 import java.util.List;
 

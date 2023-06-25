@@ -1,4 +1,4 @@
-package org.ua.javaPro.berezhnoy.bank.currencyConverterAPI;
+package org.ua.javaPro.berezhnoy.bank.currency;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
