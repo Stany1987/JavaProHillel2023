@@ -43,13 +43,13 @@ class PersonAndAccountControllerIntegrationTest {
         var uuidPerson = UUID.randomUUID().toString();
         personRepository.save(Person.builder()
                 .uid(uuidPerson)
-                .name("testtt")
-                .email("@testtt")
+                .name("testtest1")
+                .email("testtest@test1")
                 .build());
 
         var createAccount = post("/api/persons/" + uuidPerson + "/accounts")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"11111111\" \n}");
+                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"11111111\",\n\"currency\":\"UAH\"\n}");
 
         mockMvc.perform(createAccount)
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -70,7 +70,7 @@ class PersonAndAccountControllerIntegrationTest {
 
         var createAccount = post("/api/persons/" + uuidPerson + "/accounts")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"100\" \n}");
+                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"100\",\n\"currency\":\"UAH\" \n}");
 
         MvcResult result = mockMvc.perform(createAccount)
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -103,7 +103,7 @@ class PersonAndAccountControllerIntegrationTest {
 
         var createAccount = post("/api/persons/" + uuidPerson + "/accounts")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"100\" \n}");
+                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"100\",\n\"currency\":\"UAH\" \n}");
 
         MvcResult result = mockMvc.perform(createAccount)
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -143,7 +143,7 @@ class PersonAndAccountControllerIntegrationTest {
 
         var createAccount = post("/api/persons/" + uuidPerson + "/accounts")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"100\" \n}");
+                .content("{\n\"iban\":\"ua111111111\",\n\"balance\": \"100\",\n\"currency\":\"UAH\" \n}");
 
         MvcResult result = mockMvc.perform(createAccount)
                 .andExpect(MockMvcResultMatchers.status().isOk())

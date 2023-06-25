@@ -63,6 +63,7 @@ public class PersonAndAccountService {
                 .uid(UUID.randomUUID().toString())
                 .iban(accountDto.iban())
                 .balance(accountDto.balance())
+                .currency(accountDto.currency())
                 .person(person)
                 .build();
 
@@ -105,6 +106,7 @@ public class PersonAndAccountService {
                 .uid(account.getUid())
                 .iban(account.getIban())
                 .balance(account.getBalance())
+                .currency(account.getCurrency())
                 .personUid(account.getPerson().getUid())
                 .build();
     }

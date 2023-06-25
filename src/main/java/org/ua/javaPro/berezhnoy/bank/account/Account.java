@@ -24,4 +24,6 @@ public class Account {
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person person;
+    @Column(nullable = false)
+    private String currency;
 }
