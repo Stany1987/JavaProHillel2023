@@ -1,10 +1,9 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomeWork27DataJPA;
+package org.ua.javaPro.berezhnoy.bank.user;
 
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;

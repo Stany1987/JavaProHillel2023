@@ -1,4 +1,4 @@
-package org.ua.javaPro.berezhnoy.bank.currencyConverterAPI;
+package org.ua.javaPro.berezhnoy.bank.currency;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

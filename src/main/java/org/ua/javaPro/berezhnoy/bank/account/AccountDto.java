@@ -1,4 +1,4 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomwWork28DBVersioning;
+package org.ua.javaPro.berezhnoy.bank.account;
 
 import lombok.Builder;
 

@@ -1,7 +1,10 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomwWork28DBVersioning;
+package org.ua.javaPro.berezhnoy.bank.person;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.ua.javaPro.berezhnoy.bank.account.Account;
+import org.ua.javaPro.berezhnoy.bank.account.AccountDto;
+import org.ua.javaPro.berezhnoy.bank.account.AccountRepository;
 
 import java.util.List;
 import java.util.NoSuchElementException;

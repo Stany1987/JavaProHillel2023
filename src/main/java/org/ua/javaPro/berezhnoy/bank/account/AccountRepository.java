@@ -1,7 +1,8 @@
-package org.ua.javaPro.berezhnoy.bank.hillelHomwWork28DBVersioning;
+package org.ua.javaPro.berezhnoy.bank.account;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.ua.javaPro.berezhnoy.bank.person.Person;
 
 import java.util.List;
 import java.util.Optional;

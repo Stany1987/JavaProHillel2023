@@ -1,8 +1,6 @@
-package org.ua.javaPro.berezhnoy.bank.currencyConverterAPI;
+package org.ua.javaPro.berezhnoy.bank.currency;
 
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

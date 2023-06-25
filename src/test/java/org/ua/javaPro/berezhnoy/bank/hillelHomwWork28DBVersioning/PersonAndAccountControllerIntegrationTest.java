@@ -14,6 +14,9 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.*;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.ua.javaPro.berezhnoy.bank.account.AccountRepository;
+import org.ua.javaPro.berezhnoy.bank.person.Person;
+import org.ua.javaPro.berezhnoy.bank.person.PersonRepository;
 
 import java.util.UUID;
 
