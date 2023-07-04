@@ -1,11 +1,12 @@
 package org.ua.javaPro.berezhnoy.bank.currency;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Currency;
 import java.util.Map;
-
+@Slf4j
 @Service
 public class CurrencyApiCurrencyConverter implements CurrencyConverter {
 
@@ -29,10 +30,15 @@ public class CurrencyApiCurrencyConverter implements CurrencyConverter {
                     .retrieve()
                     .bodyToMono(Map.class)
                     .block();
+            log.info("api"+result);
             Map<String, Object> data = (Map<String, Object>) result.get("data");
+            System.out.println("Data: " + data);
             Map<String, Object> currencyData = (Map<String, Object>) data.get(to.toString());
-            Double value = (Double) currencyData.get("value");
+            System.out.println("Currency Data: " + currencyData);
+            Double value = ((Number) currencyData.get("value")).doubleValue();
+            System.out.println("Conversion Rate: " + value);
             return amount * value;
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Currency conversion error");
