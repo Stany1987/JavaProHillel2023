@@ -83,7 +83,7 @@ public class TransactionService {
 
     }
 
-    public Transaction getTransactionById(Long transactionId) {
+    public TransactionDto getTransactionById(Long transactionId) {
         Optional<Transaction> optionalTransaction = transactionRepository.findById(transactionId);
         return optionalTransaction.orElse(null);
     }
