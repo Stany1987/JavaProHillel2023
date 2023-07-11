@@ -24,5 +24,4 @@ public class CurrencyController {
         return Map.of("value", currencyConverter.convert(from, to, amount));
 
     }
-
 }

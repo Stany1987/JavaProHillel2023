@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.ua.javaPro.berezhnoy.bank.account.AccountDto;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
 @RestController
@@ -27,6 +28,16 @@ public class PersonAndAccountController {
     @DeleteMapping("/{id}")
     public void deletePerson(@PathVariable("id") String id) {
         personAndAccountService.deletePerson(id);
+    }
+
+    @GetMapping("/iban/{iban}")
+    public ResponseEntity<AccountDto> getAccountByIban(@PathVariable String iban) {
+        try {
+            AccountDto accountDto = personAndAccountService.findAccountByIban(iban);
+            return ResponseEntity.ok(accountDto);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 

@@ -77,6 +77,12 @@ public class PersonAndAccountService {
                 .orElseThrow(() -> new NoSuchElementException("Account not fund " + id));
     }
 
+    public AccountDto findAccountByIban(String iban) {
+        return accountRepository.findByIban(iban)
+                .map(this::mapAccountToDto)
+                .orElseThrow(() -> new NoSuchElementException("Account not found: " + iban));
+    }
+
     public List<AccountDto> personAccaunts(String personUid) {
         var person = personRepository.findByUid(personUid)
                 .orElseThrow(() -> new NoSuchElementException("Person not found uid " + personUid));
